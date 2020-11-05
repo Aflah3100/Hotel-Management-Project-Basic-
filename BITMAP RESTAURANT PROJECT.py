@@ -1,5 +1,9 @@
+#***************************BITMAP RETAURANT CODING MANAGER************************
+
+
 #****************IMPORT SECTIONS***********************8
 from tkinter import *
+import random
 
 
 
@@ -72,15 +76,15 @@ def clearpress():
     expression=""
 
 
-def pressoff():
+def pressbill():
     global expression
-    mainequation.set(" POWERED OFF!!! ")
+    mainequation.set(" PLEASE TAKE YOUR BILL .\nTHANK YOU!!!!! ")
     expression=""
 
-def presscloss():
-    global expression
-    mainequation.set("SHOP CLOSED! THANK YOU!!!!!!!!")
-    expression=""
+def pressset():
+    disp9.set("50.00")
+    disp10.set("25.44")
+#*******************************************STATE TAX AND SERVICE CHARGE CAN BE CHANGED HERE*******************************************************************
 
 def presscash():
     global expression
@@ -158,11 +162,11 @@ divide.grid(row=4,column=3)
 
 #CREATE OTHER FUNCTION BUTTONS
 
-off_button=Button(right_frame,text='Off!',font=('verdana',12,'bold'),bg='#48C9B0',bd=8,padx=10,pady=19,fg='black',command=lambda:pressoff())
-off_button.grid(row=5,column=1)
+bill_button=Button(right_frame,text='BILL',font=('verdana',12,'bold'),bg='#48C9B0',bd=8,padx=10,pady=19,fg='black',command=lambda:pressbill())
+bill_button.grid(row=5,column=1)
 
-close_button=Button(right_frame,text='Close',font=('verdana',12,'bold'),bg='#48C9B0',bd=8,padx=10,pady=19,fg='black',command=lambda:presscloss())
-close_button.grid(row=5,column=2)
+setprice_button=Button(right_frame,text='Price',font=('verdana',12,'bold'),bg='#48C9B0',bd=8,padx=10,pady=19,fg='black',command=lambda:pressset())
+setprice_button.grid(row=5,column=2)
 
 cashier_button=Button(right_frame,text='Cash',font=('verdana',12,'bold'),bg='#48C9B0',bd=8,padx=10,pady=19,fg='black',command=lambda:presscash())
 cashier_button.grid(row=5,column=3)
@@ -190,35 +194,35 @@ meal1_refer=Label(left_frame,text='Meal 1: ',font=('arial',16,'bold'),bd=16,anch
 meal1_refer.grid(row=1,column=0)
 
 disp1=StringVar()
-textmeal1_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+textmeal1_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp1,insertwidth=4,bg='#16A085',justify='right')
 textmeal1_refr.grid(row=1,column=1)
 
 meal2_refer=Label(left_frame,text='Meal 2: ',font=('arial',16,'bold'),bd=16,anchor='w',)
 meal2_refer.grid(row=2,column=0)
 
 disp2=StringVar()
-textmeal2_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+textmeal2_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp2,insertwidth=4,bg='#16A085',justify='right')
 textmeal2_refr.grid(row=2,column=1)
 
 meal3_refer=Label(left_frame,text='Meal 3: ',font=('arial',16,'bold'),bd=16,anchor='w',)
 meal3_refer.grid(row=3,column=0)
 
 disp3=StringVar()
-textmeal3_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+textmeal3_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp3,insertwidth=4,bg='#16A085',justify='right')
 textmeal3_refr.grid(row=3,column=1)
 
 meal4_refer=Label(left_frame,text='Meal 4: ',font=('arial',16,'bold'),bd=16,anchor='w',)
 meal4_refer.grid(row=4,column=0)
 
 disp4=StringVar()
-textmeal4_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+textmeal4_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp4,insertwidth=4,bg='#16A085',justify='right')
 textmeal4_refr.grid(row=4,column=1)
 
 meal5_refer=Label(left_frame,text='Meal 5: ',font=('arial',16,'bold'),bd=16,anchor='w',)
 meal5_refer.grid(row=5,column=0)
 
 disp5=StringVar()
-textmeal5_refr=Entry(left_frame,font=('ariall',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+textmeal5_refr=Entry(left_frame,font=('ariall',16,'bold'),bd=16,textvariable=disp5,insertwidth=4,bg='#16A085',justify='right')
 textmeal5_refr.grid(row=5,column=1)
 
 
@@ -230,14 +234,14 @@ drinks_refer=Label(left_frame,text='DRINKS',font=('arial',16,'bold'),bd=16,ancho
 drinks_refer.grid(row=0,column=2)
 
 disp7=StringVar()
-drinks_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+drinks_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp7,insertwidth=4,bg='#16A085',justify='right')
 drinks_refr.grid(row=0,column=3)
 
 mealcost_refer=Label(left_frame,text='Meal Cost (T)',font=('arial',16,'bold'),bd=16,anchor='w',)
 mealcost_refer.grid(row=1,column=2)
 
 disp8=StringVar()
-mealcost_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+mealcost_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp8,insertwidth=4,bg='#16A085',justify='right')
 mealcost_refr.grid(row=1,column=3)
 
 
@@ -245,33 +249,91 @@ servcharge_refer=Label(left_frame,text='Service Charge: ',font=('arial',16,'bold
 servcharge_refer.grid(row=2,column=2)
 
 disp9=StringVar()
-servcharge_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+servcharge_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp9,insertwidth=4,bg='#16A085',justify='right')
 servcharge_refr.grid(row=2,column=3)
 
 tax_refer=Label(left_frame,text='State Tax: ',font=('arial',16,'bold'),bd=16,anchor='w',)
 tax_refer.grid(row=3,column=2)
 
 disp10=StringVar()
-tax_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+tax_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp10,insertwidth=4,bg='#16A085',justify='right')
 tax_refr.grid(row=3,column=3)
 
 subt_refer=Label(left_frame,text='Sub Total: ',font=('arial',16,'bold'),bd=16,anchor='w',)
 subt_refer.grid(row=4,column=2)
 
 disp11=StringVar()
-subt_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+subt_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp11,insertwidth=4,bg='#16A085',justify='right')
 subt_refr.grid(row=4,column=3)
 
 total_refer=Label(left_frame,text='Total Cost: ',font=('verdana',16,'bold'),bd=16,anchor='w',)
 total_refer.grid(row=5,column=2)
 
 disp12=StringVar()
-total_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp,insertwidth=4,bg='#16A085',justify='right')
+total_refr=Entry(left_frame,font=('arial',16,'bold'),bd=16,textvariable=disp12,insertwidth=4,bg='#16A085',justify='right')
 total_refr.grid(row=5,column=3)
+
+
+
+#**************UTILITY FUNCTION CREATION AREA***********************
+
+def presstotal():
+    random_var=random.randint(10908,11520)
+    randomrefer=str(random_var)
+    disp.set(random_var)
+
+
+def pressreset():
+    disp.set("")
+    disp1.set("")
+    disp2.set("")
+    disp3.set("")
+    disp4.set("")
+    disp5.set("")
+    disp7.set("")
+    disp8.set("")
+    disp9.set("")
+    disp10.set("")
+    disp11.set("")
+    disp12.set("")
+
+def pressshutdown():
+    root.destroy()
+
+def pressshopclose():
+    disp.set("CLOSED")
+    disp1.set("CLOSED")
+    disp2.set("CLOSED")
+    disp3.set("CLOSED")
+    disp4.set("CLOSED")
+    disp5.set("CLOSED")
+    disp7.set("CLOSED")
+    disp8.set("CLOSED")
+    disp9.set("CLOSED")
+    disp10.set("CLOSED")
+    disp11.set("CLOSED")
+    disp12.set("CLOSED")
+    equation.set("OUT OF USE!!!")
+    mainequation.set("LIGHTS OFF AND SHUTTING DOWN!!!")
+
+
+
 
 
 #*********UTILITY BUTTONS*****************************
 
+
+total_button=Button(left_frame,padx=16,pady=16,fg='black',bg='#48C9B0',font=('arial',16,'bold'),width=10,text='TOTAL',command=lambda :presstotal(),bd=4)
+total_button.grid(row=8,column=0)
+
+reset_button=Button(left_frame,padx=16,pady=16,fg='black',bg='#48C9B0',font=('arial',16,'bold'),width=10,text='RESET',command=lambda :pressreset(),bd=4)
+reset_button.grid(row=8,column=1)
+
+shutdown_button=Button(left_frame,padx=16,pady=16,fg='black',bg='#48C9B0',font=('arial',16,'bold'),width=10,text='Shut Down',command=lambda :pressshutdown(),bd=4)
+shutdown_button.grid(row=8,column=3)
+
+shopclose_button=Button(left_frame,padx=16,pady=16,fg='black',bg='#48C9B0',font=('arial',16,'bold'),width=10,text='Close Shop',command=lambda :pressshopclose(),bd=4)
+shopclose_button.grid(row=8,column=2)
 
 
 
