@@ -72,6 +72,7 @@ def equalpress():
 
 def clearpress():
     global expression
+    mainequation.set("")
     equation.set('0')
     expression=""
 
