@@ -350,25 +350,11 @@ shopclose_button.grid(row=8,column=2)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 root.mainloop()
+
+
+
+#Created By:AFLAH SEDHIQUE
+#PUSHED TO GITHUB(aflah3100@gmail.com)
 
 
